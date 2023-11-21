@@ -17,6 +17,7 @@ import {
 import ExploreContainer from "../components/ExploreContainer";
 import "./Tab2.css";
 import {backspace} from "ionicons/icons";
+import {useHistory} from "react-router";
 
 const Tab2: React.FC = () => {
     const [equipes, setEquipes] = useState<Array<{ Nation: string; Population: number; Year: string }>>([]);
@@ -48,9 +49,9 @@ const Tab2: React.FC = () => {
             })
             .catch((error) => console.log(error));
     };
-
+    const history = useHistory();
     const handleReload = () => {
-        window.location.reload();
+        history.go(0);
     };
 
     return (
