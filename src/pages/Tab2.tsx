@@ -19,8 +19,9 @@ import "./Tab2.css";
 import {backspace} from "ionicons/icons";
 
 const Tab2: React.FC = () => {
-    const [equipes, setEquipes] = useState([]);
-    const [joueurs, setJoueurs] = useState([]);
+    const [equipes, setEquipes] = useState<Array<{ Nation: string; Population: number; Year: string }>>([]);
+    const [joueurs, setJoueurs] = useState<Array<{ Nation: string; Population: number; Year: string }>>([]);
+
 
     useEffect(() => {
         const getApi = () => {
